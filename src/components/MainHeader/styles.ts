@@ -2,5 +2,6 @@ import styled from "styled-components";
 
 export const MainHeaderElement = styled.header `
   grid-area: MH;
-  background-color: #171721;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.secondary};
 `
