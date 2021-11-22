@@ -1,8 +1,15 @@
 import React from 'react';
+import Layout from './components/Layout/Layout';
+import GlobalStyle from './styles/global';
+import { ThemeProvider } from "styled-components"
+import dark from './styles/themes/dark';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <ThemeProvider theme={dark}>
+      <GlobalStyle />
+      <Layout />
+    </ThemeProvider>
   );
 }
 
