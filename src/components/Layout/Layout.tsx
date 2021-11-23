@@ -4,12 +4,14 @@ import Content from "../Content/Content";
 import MainHeader from "../MainHeader/MainHeader";
 import { LayoutWrapper } from "./styles";
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({ children }) => {
   return (
     <LayoutWrapper>
       <Aside />
       <MainHeader />
-      <Content />
+      <Content>
+        { children }
+      </Content>
     </LayoutWrapper>
   );
 };
