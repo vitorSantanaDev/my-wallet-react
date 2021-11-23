@@ -16,6 +16,7 @@ declare module 'styled-components' {
       sucess: string;
       info: string;
       warning: string;
+      link: string;
     }
   }
 }

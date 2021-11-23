@@ -12,6 +12,7 @@ export default {
 
     sucess: '#1ECA5F',
     info: '#FBB759',
-    warning: '#E9766B'
+    warning: '#E9766B',
+    link: '#9F9F9E',
   }
 }
