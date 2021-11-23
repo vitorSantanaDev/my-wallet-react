@@ -1,10 +1,10 @@
 import React from "react";
 import { ContentWrapper } from "./styles";
 
-const Content: React.FC = () => {
+const Content: React.FC = ({ children }) => {
   return (
     <ContentWrapper>
-      <h1>Content</h1>
+      { children }
     </ContentWrapper>
   );
 };
