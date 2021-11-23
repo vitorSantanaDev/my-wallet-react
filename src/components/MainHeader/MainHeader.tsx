@@ -14,8 +14,8 @@ const MainHeader: React.FC = () => {
     <S.MainHeaderElement>
       <Toggle />
       <S.ProfileWrapper>
-      <S.WelcomeWrapper>Olá, {emoji}</S.WelcomeWrapper>
-      <S.UserWrapper>Vitor Silva</S.UserWrapper>
+      <S.WelcomeWrapper>Hello, {emoji}</S.WelcomeWrapper>
+      <S.UserWrapper>Vitor Santana</S.UserWrapper>
       </S.ProfileWrapper>
     </S.MainHeaderElement>
   );
