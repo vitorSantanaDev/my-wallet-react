@@ -1,14 +1,9 @@
 import styled from "styled-components";
-
-interface HistoryCardWrapperProps {
-  color: string;
-}
-
 interface TagElementProps {
   color: string;
 }
 
-export const HistoryCardWrapper = styled.li<HistoryCardWrapperProps>`
+export const HistoryCardWrapper = styled.li`
   margin: 12px;
   display: flex;
   cursor: pointer;
@@ -18,7 +13,7 @@ export const HistoryCardWrapper = styled.li<HistoryCardWrapperProps>`
   align-items: center;
   transition: ease-in-out 0.3s;
   justify-content: space-between;
-  background-color: ${({ color }) => color};
+  background-color: ${({ theme }) => theme.colors.tertiary};
 
   &:hover {
     opacity: 0.7;
