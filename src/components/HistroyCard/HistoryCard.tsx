@@ -2,7 +2,6 @@ import React from "react";
 import * as S from "./styles";
 
 interface HistoryCardProps {
-  cardColor: string;
   tagColor: string;
   title: string;
   subTitle: string;
@@ -10,14 +9,13 @@ interface HistoryCardProps {
 }
 
 const HistoryCard: React.FC<HistoryCardProps> = ({
-  cardColor,
   tagColor,
   title,
   subTitle,
   amount,
 }) => {
   return (
-    <S.HistoryCardWrapper color={cardColor}>
+    <S.HistoryCardWrapper >
         <S.TagElement color={tagColor} />
         <S.CardContent>
           <span>{title}</span>
