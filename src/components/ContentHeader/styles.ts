@@ -11,15 +11,17 @@ export const Title = styled.h3 `
   color: ${({theme}) => theme.colors.white};
 
   &::after {
-    width: 50%;
+    width: 50px;
     height: 8px;
     content: "";
     display: block;
     margin-top: 8px;
     border-radius: 2px;
-    background-color: ${({ theme }) => theme.colors.warning};
+    background-color: ${({ color }) => color};
   }
 `
 
 export const ControllersWrapper = styled.div `
+  display: flex;
+  
 `

@@ -1,16 +1,23 @@
-import React from 'react'
-import * as S from './styles'
+import React from "react";
+import * as S from "./styles";
 
-const ContentHeader: React.FC = () => {
-  return (
-    <S.ContentHeaderWrapper>
-      <S.Title>Dashboard</S.Title>
-      <S.ControllersWrapper>
-        <button type="button">Button</button>
-        <button type="button">Button</button>
-      </S.ControllersWrapper>
-    </S.ContentHeaderWrapper>
-  )
+interface ContentHeaderProps {
+  title: string;
+  lineColor: string;
+  children: React.ReactNode;
 }
 
-export default ContentHeader
+const ContentHeader: React.FC<ContentHeaderProps> = ({
+  title,
+  lineColor,
+  children,
+}) => {
+  return (
+    <S.ContentHeaderWrapper>
+      <S.Title color={lineColor}>{title}</S.Title>
+      <S.ControllersWrapper>{children}</S.ControllersWrapper>
+    </S.ContentHeaderWrapper>
+  );
+};
+
+export default ContentHeader;
