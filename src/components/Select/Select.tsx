@@ -4,7 +4,7 @@ import * as S from "./styles";
 interface SelectProps {
   options: {
     value: string | number;
-    label: string;
+    label: string | number;
   }[];
 }
 
