@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 
-const Toggle = () => {
+const Toggle: React.FC = () => {
   return (
     <S.ToggleWrapper>
       <S.ToggleLabel>Light</S.ToggleLabel>

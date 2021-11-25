@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 
-const ContentHeader = () => {
+const ContentHeader: React.FC = () => {
   return (
     <S.ContentHeaderWrapper>
       <S.Title>Dashboard</S.Title>
