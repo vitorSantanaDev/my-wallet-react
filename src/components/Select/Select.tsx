@@ -1,12 +1,23 @@
-import React from 'react'
-import { SelectWrapper } from './styles'
+import React from "react";
+import * as S from "./styles";
 
-const Select: React.FC = () => {
-  return (
-    <SelectWrapper>
-      
-    </SelectWrapper>
-  )
+interface SelectProps {
+  options: {
+    value: string | number;
+    label: string;
+  }[];
 }
 
-export default Select
+const Select: React.FC<SelectProps> = ({ options }) => {
+  return (
+    <S.SelectWrapper>
+      <select name="" id="">
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </S.SelectWrapper>
+  );
+};
+
+export default Select;
