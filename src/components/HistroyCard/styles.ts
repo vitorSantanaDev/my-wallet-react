@@ -36,4 +36,9 @@ export const CardContent = styled.div`
   padding-left: 12px;
   flex-direction: column;
   justify-content: space-between;
+
+  span {
+    font-size: 18px;
+    font-weight: 600;
+  }
 `;
