@@ -29,7 +29,7 @@ export const Filters = styled.div`
         display: block;
         margin: 8px auto;
         border-radius: 4px;
-        border-bottom: 10px solid ${({ theme }) => theme.colors.warning};
+        border-bottom: 10px solid ${({ theme }) => theme.colors.sucess};
       }
     }
 
@@ -40,7 +40,7 @@ export const Filters = styled.div`
         display: block;
         margin: 8px auto;
         border-radius: 4px;
-        border-bottom: 10px solid ${({ theme }) => theme.colors.sucess};
+        border-bottom: 10px solid ${({ theme }) => theme.colors.info};
       }
     }
   }
