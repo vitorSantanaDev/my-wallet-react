@@ -6,6 +6,8 @@ import Select from "../../components/Select/Select";
 import dark from "../../styles/themes/dark";
 import gains from "../../repositories/gains";
 import expenses from "../../repositories/expenses";
+import formatCurrecy from "../../utils/formatCurrent";
+import formatDate from "../../utils/formatDate";
 import * as S from "./styles";
 
 interface IData {
@@ -37,9 +39,9 @@ const List: React.FC = () => {
       return {
         id: String(Math.random() * listData.length),
         description: data.description,
-        amountFormated: data.amount,
+        amountFormated: formatCurrecy(Number(data.amount)),
         frequency: data.frequency,
-        dataFormated: data.date,
+        dataFormated: formatDate(data.date),
         tagColor:
           data.frequency === "recorrente"
             ? dark.colors.sucess
