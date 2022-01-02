@@ -6,14 +6,18 @@ interface SelectProps {
     value: string | number;
     label: string | number;
   }[];
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void | undefined;
+  defaultValue?: string | number
 }
 
-const Select: React.FC<SelectProps> = ({ options }) => {
+const Select: React.FC<SelectProps> = ({ options, onChange, defaultValue }) => {
   return (
     <S.SelectWrapper>
-      <select name="" id="">
+      <select onChange={onChange} defaultValue={defaultValue}>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>{option.label}</option>
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </select>
     </S.SelectWrapper>
