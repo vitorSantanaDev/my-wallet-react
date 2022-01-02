@@ -21,6 +21,13 @@ interface IData {
 
 const List: React.FC = () => {
   const [data, setData] = useState<IData[]>([]);
+  const [monthSelected, setMonthSelected] = useState<string>(
+    String(new Date().getMonth() + 1)
+  );
+  const [yearSelected, setYearSelected] = useState<string>(
+    String(new Date().getFullYear())
+  );
+
   const { type } = useParams();
 
   const titleAndLineColor = useMemo(() => {
@@ -35,7 +42,15 @@ const List: React.FC = () => {
   }, [type]);
 
   useEffect(() => {
-    const response = listData.map((data) => {
+    const filteredDate = listData.filter((data) => {
+      const date = new Date(data.date);
+      const month = String(date.getMonth() + 1);
+      const year = String(date.getFullYear());
+
+      return month === monthSelected && year === yearSelected;
+    });
+
+    const formattedData = filteredDate.map((data) => {
       return {
         id: String(Math.random() * listData.length),
         description: data.description,
@@ -48,28 +63,53 @@ const List: React.FC = () => {
             : dark.colors.info,
       };
     });
-    setData(response);
-  }, [listData]);
+
+    setData(formattedData)
+  }, [listData, monthSelected, yearSelected]);
 
   const monthly = [
-    { value: 11, label: "Novembro" },
-    { value: 10, label: "Outubro" },
-    { value: 9, label: "Setembro" },
+    { value: 1, label: "Janeiro" },
+    { value: 2, label: "Fevereiro" },
+    { value: 3, label: "Março" },
+    { value: 4, label: "Abril" },
+    { value: 5, label: "Maio" },
+    { value: 6, label: "Junho" },
+    { value: 7, label: "Julho" },
     { value: 8, label: "Agosto" },
+    { value: 9, label: "Setembro" },
+    { value: 10, label: "Outubro" },
+    { value: 11, label: "Novembro" },
+    { value: 12, label: "Dezembro" },
   ];
 
   const years = [
-    { value: 2021, label: 2021 },
-    { value: 2020, label: 2020 },
-    { value: 2019, label: 2019 },
+    { value: 2010, label: 2010 },
+    { value: 2011, label: 2011 },
+    { value: 2013, label: 2013 },
+    { value: 2014, label: 2014 },
+    { value: 2015, label: 2015 },
+    { value: 2016, label: 2016 },
+    { value: 2017, label: 2017 },
     { value: 2018, label: 2018 },
+    { value: 2019, label: 2019 },
+    { value: 2020, label: 2020 },
+    { value: 2021, label: 2021 },
+    { value: 2022, label: 2022 }
   ];
 
   return (
     <S.ListWrapper>
       <ContentHeader title={title} lineColor={lineColor}>
-        <Select options={monthly} />
-        <Select options={years} />
+        <Select
+          defaultValue={monthSelected}
+          options={monthly}
+          onChange={({ target }) => setMonthSelected(target.value)}
+        />
+        <Select
+          defaultValue={yearSelected}
+          options={years}
+          onChange={({ target }) => setYearSelected(target.value)}
+        />
       </ContentHeader>
 
       <S.Filters>
