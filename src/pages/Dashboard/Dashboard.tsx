@@ -10,7 +10,7 @@ const Dashboard: React.FC = () => {
   return (
     <S.DashboardWrapper>
       <ContentHeader title="Dashboard" lineColor="#E9766B">
-        <Select options={options}/>
+        <Select defaultValue={''} options={options} onChange={() => {}}/>
       </ContentHeader>
     </S.DashboardWrapper>
   );
