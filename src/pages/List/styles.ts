@@ -11,6 +11,7 @@ export const Filters = styled.div`
   justify-content: center;
 
   .tagFilter {
+    opacity: 0.4;
     margin: 0 10px;
     font-size: 18px;
     background: none;
@@ -43,5 +44,9 @@ export const Filters = styled.div`
         border-bottom: 10px solid ${({ theme }) => theme.colors.info};
       }
     }
+  }
+
+  .tag-actived {
+    opacity: 1;
   }
 `;
