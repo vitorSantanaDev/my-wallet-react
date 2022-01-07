@@ -11,8 +11,6 @@ const Dashboard: React.FC = () => {
     new Date().getMonth() + 1
   );
   const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
-  const options = [{value: "Vitor", label: "Vitor"}, {value: "Cassia", label: "Cassia"}]
-
   const monthly = useMemo(() => {
     return listOfMonths.map((month, index) => {
       return {
