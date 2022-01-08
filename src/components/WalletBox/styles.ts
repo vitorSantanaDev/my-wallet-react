@@ -5,7 +5,7 @@ interface WalletBoxWrapperProps {
 }
 
 export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
-  width: 32%;
+  width: 31.2%;
   height: 150px;
   margin: 0 12px;
   overflow: hidden;
