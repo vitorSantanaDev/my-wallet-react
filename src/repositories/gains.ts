@@ -1,4 +1,4 @@
-export default [
+const gains = [
   {
     description: "Salário",
     amount: "1300.52",
@@ -365,3 +365,5 @@ export default [
     date: "2022-07-19",
   },
 ];
+
+export default gains
