@@ -35,4 +35,8 @@ export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
     font-weight: 500;
     position: absolute;
   }
+
+  @media only screen and (max-width: 1366px) {
+    width: 31%;
+  }
 `
