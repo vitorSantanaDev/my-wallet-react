@@ -4,8 +4,9 @@ export const MessageBoxWrapper = styled.div`
   width: 48%;
   display: flex;
   height: 260px;
-  margin: 12px 0;
   padding: 32px 24px;
+  border-radius: 10px;
+  margin: 12px 0 0 11px;
   flex-direction: column;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.white};
