@@ -8,10 +8,11 @@ import listOfMonths from "../../utils/months";
 import dark from "../../styles/themes/dark";
 import * as S from "./styles";
 import MessageBox from "../../components/MessageBox";
-import HappyImage from "../../assets/images/face-happy.svg"
-import SadImage from "../../assets/images/sad.svg"
-import TiredImage from "../../assets/images/tired.svg"
+import HappyImage from "../../assets/images/face-happy.svg";
+import SadImage from "../../assets/images/sad.svg";
+import TiredImage from "../../assets/images/tired.svg";
 import PieChartComponent from "../../components/PieChart/PieChart";
+import HistoryBox from "../../components/HistoryBox/HistoryBox";
 
 const Dashboard: React.FC = () => {
   const [monthSelected, setMonthSelected] = useState<number>(
@@ -52,92 +53,147 @@ const Dashboard: React.FC = () => {
     let total: number = 0;
 
     expenses.forEach((item) => {
-      const date = new Date(item.date)
-      const year = date.getFullYear()
-      const month = date.getMonth() + 1
+      const date = new Date(item.date);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
 
-      if(month === monthSelected && year === yearSelected) {
+      if (month === monthSelected && year === yearSelected) {
         try {
-          total += Number(item.amount)
-        } catch(error) {
-          throw new Error('Invalid amount! Amount must be number.')
+          total += Number(item.amount);
+        } catch (error) {
+          throw new Error("Invalid amount! Amount must be number.");
         }
       }
-    })
-    return total
-  }, [monthSelected, yearSelected])
+    });
+    return total;
+  }, [monthSelected, yearSelected]);
 
   const totalGains = useMemo(() => {
     let total: number = 0;
 
     gains.forEach((item) => {
-      const date = new Date(item.date)
-      const year = date.getFullYear()
-      const month = date.getMonth() + 1
+      const date = new Date(item.date);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
 
-      if(month === monthSelected && year === yearSelected) {
+      if (month === monthSelected && year === yearSelected) {
         try {
-          total += Number(item.amount)
-        } catch(error) {
-          throw new Error('Invalid amount! Amount must be number.')
+          total += Number(item.amount);
+        } catch (error) {
+          throw new Error("Invalid amount! Amount must be number.");
         }
       }
-    })
-    return total
-  }, [monthSelected, yearSelected])
+    });
+    return total;
+  }, [monthSelected, yearSelected]);
 
   const totalBalance = useMemo(() => {
-    return totalGains - totalExpenses
-  }, [totalGains, totalExpenses])
+    return totalGains - totalExpenses;
+  }, [totalGains, totalExpenses]);
 
   const message = useMemo(() => {
-    if(totalBalance < 0) {
+    if (totalBalance < 0) {
       return {
         title: "That sad.",
         description: "This month, you spent more than you should.",
-        footerText: "Check your spending and try to cut out some unnecessary stuff.",
-        icon: SadImage
-      }
-    } else if(totalBalance === 0) {
+        footerText:
+          "Check your spending and try to cut out some unnecessary stuff.",
+        icon: SadImage,
+      };
+    } else if (totalBalance === 0) {
       return {
         title: "Phew!",
         description: "This month, you spent exactly what you earned.",
         footerText: "Take care. Next time try to save your money.",
-        icon: TiredImage
-      }
+        icon: TiredImage,
+      };
     } else {
       return {
         title: "Very good!",
         description: "Your wallet is positive.",
         footerText: "Consider investing your money.",
-        icon: HappyImage
-      }
+        icon: HappyImage,
+      };
     }
-  }, [totalBalance])
+  }, [totalBalance]);
 
   const realationExepensesVersusGains = useMemo(() => {
-    const total = totalGains + totalExpenses
-    const gainsPercent = (totalGains / total) * 100
-    const expensesPercent = (totalExpenses / total) * 100
-    
+    const total = totalGains + totalExpenses;
+    const gainsPercent = (totalGains / total) * 100;
+    const expensesPercent = (totalExpenses / total) * 100;
+
     const data = [
       {
         name: "Appetizer",
         value: totalGains,
         percent: Number(gainsPercent.toFixed(1)),
-        color: dark.colors.info
+        color: dark.colors.info,
       },
       {
-        name: 'Outputs',
+        name: "Outputs",
         value: totalExpenses,
         percent: Number(expensesPercent.toFixed(1)),
-        color: dark.colors.warning
-      }
-    ]
+        color: dark.colors.warning,
+      },
+    ];
 
-    return data
+    return data;
+  }, [totalGains, totalExpenses]);
 
-  }, [totalGains, totalExpenses])
+  const historyData = useMemo(() => {
+    return listOfMonths
+      .map((_, month) => {
+        let amountAppetizer = 0;
+        let amountOutput = 0;
+
+        gains.forEach((gain) => {
+          const date = new Date(gain.date);
+          const gainMonth = date.getMonth();
+          const gainYear = date.getFullYear();
+
+          if (gainMonth === month && gainYear === yearSelected) {
+            try {
+              amountAppetizer += Number(gain.amount);
+            } catch (error) {
+              throw new Error(
+                "amountEntry is invalid. amountEntry must be valid number."
+              );
+            }
+          }
+        });
+
+        expenses.forEach((expense) => {
+          const date = new Date(expense.date);
+          const expenseMonth = date.getMonth();
+          const expenseYear = date.getFullYear();
+
+          if (expenseMonth === month && expenseYear === yearSelected) {
+            try {
+              amountOutput += Number(expense.amount);
+            } catch (error) {
+              throw new Error(
+                "amountOutputs is invalid. amountOutputs must be valid number"
+              );
+            }
+          }
+        });
+
+        return {
+          monthNumber: month,
+          month: listOfMonths[month].substr(0, 3),
+          amountAppetizer,
+          amountOutput,
+        };
+      })
+      .filter((item) => {
+        const currentMonth = new Date().getMonth();
+        const currentYear = new Date().getFullYear();
+        return (
+          (yearSelected === currentYear && item.monthNumber <= currentMonth) ||
+          yearSelected < currentYear
+        );
+      });
+  }, [yearSelected]);
 
   const handleMonthSelected = (month: string) => {
     try {
@@ -193,13 +249,18 @@ const Dashboard: React.FC = () => {
           amount={totalExpenses}
           footerLabel="Updated based on inputs and outputs."
         />
-        <MessageBox  
+        <MessageBox
           title={message.title}
           description={message.description}
           footerText={message.footerText}
           icon={message.icon}
         />
         <PieChartComponent data={realationExepensesVersusGains} />
+        <HistoryBox
+          data={historyData}
+          lineColorAmountAppetizer={dark.colors.info}
+          lineColorAmountOutput={dark.colors.warning}
+        />
       </S.ContentDashboard>
     </S.DashboardWrapper>
   );
