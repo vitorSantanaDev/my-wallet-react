@@ -4,35 +4,36 @@ interface LegendProps {
   color: string;
 }
 
-export const PieChartComponentWrapper = styled.div`
-  width: 48%;
-  height: 260px;
-  display: flex;
+export const HistoryBoxWrapper = styled.div`
+  width: 100%;
   margin: 16px 0;
   padding: 32px 24px;
-  align-items: center;
-  border-radius: 10px;
+  border-radius: 8px;
+  color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.tertiary};
 `;
 
-export const SideLeft = styled.aside`
-  padding: 32px 24px;
+export const ChartHeader = styled.header`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   > h2 {
+    padding-left: 16px;
     margin-bottom: 24px;
   }
 `;
 
 export const LegendContainer = styled.ul`
-  max-height: 155px;
-  overflow-y: scroll;
-  padding-right: 16px;
+  display: flex;
 `;
 
 export const Legend = styled.li<LegendProps>`
   display: flex;
+  margin-left: 16px;
   margin-bottom: 8px;
   align-items: center;
+  padding-right: 16px;
 
   > div {
     width: 45px;
@@ -50,9 +51,6 @@ export const Legend = styled.li<LegendProps>`
   }
 `;
 
-export const SideRight = styled.main`
-  flex: 1;
-  display: flex;
-  height: 260px;
-  justify-content: center;
+export const ChartWrapper = styled.div`
+  height: 360px;
 `;
