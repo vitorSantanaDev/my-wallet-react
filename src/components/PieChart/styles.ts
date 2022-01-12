@@ -8,10 +8,10 @@ export const PieChartComponentWrapper = styled.div`
   width: 48%;
   height: 260px;
   display: flex;
+  margin: 16px 0;
   padding: 32px 24px;
   align-items: center;
   border-radius: 10px;
-  margin: 16px 16px 0 0;
   background-color: ${({ theme }) => theme.colors.tertiary};
 `;
 
@@ -52,7 +52,7 @@ export const Legend = styled.li<LegendProps>`
 
 export const SideRight = styled.main`
   flex: 1;
-  height: 400px;
   display: flex;
+  height: 260px;
   justify-content: center;
 `;
