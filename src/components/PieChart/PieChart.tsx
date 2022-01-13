@@ -14,7 +14,7 @@ interface PieChartComponentProps {
 const PieChartComponent: React.FC<PieChartComponentProps> = ({ data }) => (
   <S.PieChartComponentWrapper>
     <S.SideLeft>
-      <h2>Realação</h2>
+      <h2>Relation</h2>
       <S.LegendContainer>
         {data.map((indicator) => (
           <S.Legend key={indicator.name} color={indicator.color}>
