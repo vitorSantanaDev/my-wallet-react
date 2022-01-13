@@ -18,18 +18,18 @@ const BarChartBox: React.FC<BarChartProps> = ({ title, data }) => {
       <S.SideLeft>
         <h2>{title}</h2>
         <S.LegendContainer>
-        {data.map((indicator) => (
-          <S.Legend key={indicator.name} color={indicator.color}>
-            <div>{indicator.percent}%</div>
-            <span>{indicator.name}</span>
-          </S.Legend>
-        ))}
-      </S.LegendContainer>
+          {data.map((indicator) => (
+            <S.Legend key={indicator.name} color={indicator.color}>
+              <div>{indicator.percent}%</div>
+              <span>{indicator.name}</span>
+            </S.Legend>
+          ))}
+        </S.LegendContainer>
       </S.SideLeft>
       <S.SideRight>
         <ResponsiveContainer>
           <BarChart data={data}>
-            <Bar dataKey="amount">
+            <Bar dataKey="amount" name="Value">
               {data.map((indicator) => (
                 <Cell
                   key={indicator.name}
@@ -38,7 +38,9 @@ const BarChartBox: React.FC<BarChartProps> = ({ title, data }) => {
                 />
               ))}
             </Bar>
-            <Tooltip />
+            <Tooltip
+              cursor={{ fill: "none" }}
+            />
           </BarChart>
         </ResponsiveContainer>
       </S.SideRight>
