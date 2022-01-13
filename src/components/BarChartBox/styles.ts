@@ -22,7 +22,6 @@ export const SideLeft = styled.aside`
 
 export const LegendContainer = styled.ul`
   max-height: 155px;
-  overflow-y: scroll;
   padding-right: 16px;
 `;
 
