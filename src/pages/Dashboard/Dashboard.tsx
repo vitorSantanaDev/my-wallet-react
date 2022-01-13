@@ -11,6 +11,7 @@ import MessageBox from "../../components/MessageBox";
 import HappyImage from "../../assets/images/face-happy.svg";
 import SadImage from "../../assets/images/sad.svg";
 import TiredImage from "../../assets/images/tired.svg";
+import SadTwo from "../../assets/images/sadTwo.svg";
 import PieChartComponent from "../../components/PieChart/PieChart";
 import HistoryBox from "../../components/HistoryBox/HistoryBox";
 import BarChartBox from "../../components/BarChartBox/BarChartBox";
@@ -101,6 +102,14 @@ const Dashboard: React.FC = () => {
           "Check your spending and try to cut out some unnecessary stuff.",
         icon: SadImage,
       };
+    } else if (totalGains === 0 && totalExpenses === 0) {
+      return {
+        title: "Op's!",
+        description: "There are no records for this month of daring entries.",
+        footerText:
+          "It looks like you didn't make any records for the selected month and year.",
+        icon: SadTwo,
+      };
     } else if (totalBalance === 0) {
       return {
         title: "Phew!",
@@ -116,24 +125,24 @@ const Dashboard: React.FC = () => {
         icon: HappyImage,
       };
     }
-  }, [totalBalance]);
+  }, [totalBalance, totalGains, totalExpenses]);
 
   const realationExepensesVersusGains = useMemo(() => {
     const total = totalGains + totalExpenses;
-    const gainsPercent = (totalGains / total) * 100;
-    const expensesPercent = (totalExpenses / total) * 100;
+    const gainsPercent = Number(((totalGains / total) * 100).toFixed(1));
+    const expensesPercent = Number(((totalExpenses / total) * 100).toFixed(1));
 
     const data = [
       {
         name: "Appetizer",
         value: totalGains,
-        percent: Number(gainsPercent.toFixed(1)),
+        percent: gainsPercent ? gainsPercent : 0,
         color: dark.colors.info,
       },
       {
         name: "Outputs",
         value: totalExpenses,
-        percent: Number(expensesPercent.toFixed(1)),
+        percent: expensesPercent ? expensesPercent : 0,
         color: dark.colors.warning,
       },
     ];
@@ -219,18 +228,23 @@ const Dashboard: React.FC = () => {
 
     const total = amountRecurrent + amountEventual;
 
+    const recurrentPercent = Number(
+      ((amountRecurrent / total) * 100).toFixed(1)
+    );
+    const eventualPercent = Number(((amountEventual / total) * 100).toFixed(1));
+
     return [
       {
         color: dark.colors.info,
         name: "Recurrents",
         amount: amountRecurrent,
-        percent: Number(((amountRecurrent / total) * 100).toFixed(1)),
+        percent: recurrentPercent ? recurrentPercent : 0,
       },
       {
         color: dark.colors.warning,
         name: "Eventuals",
         amount: amountEventual,
-        percent: Number(((amountEventual / total) * 100).toFixed(1)),
+        percent: eventualPercent ? eventualPercent : 0,
       },
     ];
   }, [monthSelected, yearSelected]);
@@ -258,18 +272,23 @@ const Dashboard: React.FC = () => {
 
     const total = amountRecurrent + amountEventual;
 
+    const recurrentPercent = Number(
+      ((amountRecurrent / total) * 100).toFixed(1)
+    );
+    const eventualPercent = Number(((amountEventual / total) * 100).toFixed(1));
+
     return [
       {
         color: dark.colors.info,
         name: "Recurrents",
         amount: amountRecurrent,
-        percent: Number(((amountRecurrent / total) * 100).toFixed(1)),
+        percent: recurrentPercent ? recurrentPercent : 0,
       },
       {
         color: dark.colors.warning,
         name: "Eventuals",
         amount: amountEventual,
-        percent: Number(((amountEventual / total) * 100).toFixed(1)),
+        percent: eventualPercent ? eventualPercent : 0,
       },
     ];
   }, [monthSelected, yearSelected]);
