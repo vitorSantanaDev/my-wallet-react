@@ -13,7 +13,7 @@ import { useAuth } from "../../hooks/auth";
 const Aside: React.FC = () => {
   const { signOut } = useAuth()
   return (
-    <AsideWrapper>
+    <AsideWrapper isOpen={true}>
       <S.HeaderWrapper>
         <S.Logo
           src={Logo}
