@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Toggle from "../Toggle/Toggle";
 
 export const MainHeaderElement = styled.header`
   grid-area: MH;
@@ -25,3 +26,5 @@ export const UserWrapper = styled.span`
   font-size: 14px;
   letter-spacing: 2px;
 `;
+
+export const ToggleComponent = styled(Toggle)``
