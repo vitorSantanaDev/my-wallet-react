@@ -43,3 +43,24 @@ export const LinkMenu = styled.a`
     margin-right: 8px;
   }
 `;
+
+export const ButtonSignOut = styled.button`
+  border: none;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+  background: none;
+  padding: 8px 16px;
+  align-items: center;
+  transition: opacity ease-in-out 0.2s;
+  color: ${({ theme }) => theme.colors.link};
+
+  &:hover {
+    opacity: 70%;
+  }
+
+  > svg {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+`;
