@@ -8,6 +8,12 @@ export const BarChartBoxWrapper = styled.div`
   border-radius: 8px;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.tertiary};
+
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const SideLeft = styled.aside`
@@ -23,6 +29,12 @@ export const SideLeft = styled.aside`
 export const LegendContainer = styled.ul`
   max-height: 155px;
   padding-right: 16px;
+
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    height: auto;
+    justify-content: space-evenly;
+  }
 `;
 
 export const Legend = styled.li`
@@ -44,6 +56,16 @@ export const Legend = styled.li`
   > span {
     font-weight: 600;
     margin-left: 8px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+   > div {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    line-height: 30px;
+    text-align: center;
+   }
   }
 `;
 

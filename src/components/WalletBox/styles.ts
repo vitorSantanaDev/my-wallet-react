@@ -38,4 +38,50 @@ export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
   @media only screen and (max-width: 1366px) {
     width: 31%;
   }
+
+  @media only screen and (max-width: 770px) {
+    > span {
+      font-size: 14px;
+    }
+
+    > h1 {
+      font-size: 22px;
+      word-wrap: break-word;
+
+      > strong {
+        width: 100%;
+        font-size: 16px;
+        display: inline-block;
+      }
+    }
+
+    > small {
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    width: 100%;
+    margin-bottom: 16px;
+
+    > h1 {
+      display: flex;
+
+      > strong {
+        width: auto;
+        font-size: 22px;
+        position: initial;
+
+        &::after {
+          width: 1px;
+          content: ' ';
+          display: inline-block;
+        }
+      }
+    }
+
+    > small {
+      font-size: 14px;
+    }
+  }
 `

@@ -25,4 +25,29 @@ export const MessageBoxWrapper = styled.div`
   > header p {
     font-size: 18px;
   }
-`
+
+  @media only screen and (max-width: 770px) {
+    width: 100%;
+    > header h1 {
+      font-size: 32px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    > header p {
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    width: 100%;
+    height: auto;
+
+    > header p {
+      margin-bottom: 16px;
+    }
+  }
+`;

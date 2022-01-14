@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useTheme } from "../../hooks/theme";
 import emojis from "../../utils/emojis";
-import Toggle from "../Toggle/Toggle";
 import * as S from "./styles";
 
 const MainHeader: React.FC = () => {
@@ -23,7 +22,7 @@ const MainHeader: React.FC = () => {
 
   return (
     <S.MainHeaderElement>
-      <Toggle 
+      <S.ToggleComponent 
         labelLeft="Light"
         labelRight="Dark"
         checked={darkTheme}
