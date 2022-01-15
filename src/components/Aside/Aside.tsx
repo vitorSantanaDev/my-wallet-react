@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AsideWrapper } from "./styles";
 import Logo from "../../assets/images/logo.svg";
 import * as S from "./styles";
@@ -7,14 +7,35 @@ import {
   MdArrowDownward,
   MdArrowUpward,
   MdExitToApp,
+  MdClose,
+  MdMenu,
 } from "react-icons/md";
 import { useAuth } from "../../hooks/auth";
+import { useTheme } from "../../hooks/theme";
+import { ToggleComponent } from "../MainHeader/styles";
 
 const Aside: React.FC = () => {
-  const { signOut } = useAuth()
+  const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState<boolean>(false);
+  const { toggleTheme, theme } = useTheme();
+  const [darkTheme, setDarkTheme] = useState(() =>
+    theme.title === "dark" ? true : false
+  );
+  const { signOut } = useAuth();
+
+  const handleToggleMenu = () => {
+    setToggleMenuIsOpened(!toggleMenuIsOpened);
+  };
+
+  const handleChangeThemeColor = () => {
+    toggleTheme()
+    setDarkTheme(!darkTheme);
+  };
   return (
-    <AsideWrapper isOpen={true}>
+    <AsideWrapper isOpen={toggleMenuIsOpened}>
       <S.HeaderWrapper>
+        <S.ToggleMenu onClick={handleToggleMenu}>
+          {toggleMenuIsOpened ? <MdClose /> : <MdMenu />}
+        </S.ToggleMenu>
         <S.Logo
           src={Logo}
           alt="Logo, apenas três circulos, um vermelho, um amarelo e um verde"
@@ -36,6 +57,14 @@ const Aside: React.FC = () => {
           To go out
         </S.ButtonSignOut>
       </S.MenuWrapper>
+      <S.ThemeToggleFooter isOpen={toggleMenuIsOpened}>
+        <ToggleComponent
+          labelLeft="Light"
+          labelRight="Dark"
+          checked={darkTheme}
+          onChange={handleChangeThemeColor}
+        />
+      </S.ThemeToggleFooter>
     </AsideWrapper>
   );
 };
