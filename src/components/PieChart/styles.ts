@@ -1,8 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes} from "styled-components";
 
 interface LegendProps {
   color: string;
 }
+
+const animate = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`
 
 export const PieChartComponentWrapper = styled.div`
   width: 48%;
@@ -12,6 +26,7 @@ export const PieChartComponentWrapper = styled.div`
   padding: 32px 24px;
   align-items: center;
   border-radius: 10px;
+  animation: ${animate} .5s;
   background-color: ${({ theme }) => theme.colors.tertiary};
 
   @media only screen and (max-width: 770px) {

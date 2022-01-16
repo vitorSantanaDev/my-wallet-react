@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animate = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`
 
 export const BarChartBoxWrapper = styled.div`
   width: 48%;
@@ -6,6 +20,7 @@ export const BarChartBoxWrapper = styled.div`
   margin: 16px 0;
   min-height: 260px;
   border-radius: 8px;
+  animation: ${animate} .5s;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.tertiary};
 

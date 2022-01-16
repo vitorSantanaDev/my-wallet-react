@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animate = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`
 
 export const MessageBoxWrapper = styled.div`
   width: 48%;
@@ -8,6 +22,7 @@ export const MessageBoxWrapper = styled.div`
   padding: 32px 24px;
   border-radius: 10px;
   flex-direction: column;
+  animation: ${animate} .5s;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.tertiary};
