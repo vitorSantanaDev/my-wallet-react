@@ -97,7 +97,7 @@ $ yarn start
 
 ---
 
-Feito com :yellow_heart: by [Vitor_Santana](https://github.com/vitorSantanaDev)
+Feito com 💚 by [Vitor_Santana](https://github.com/vitorSantanaDev)
 
 [![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Santana-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitor-santana-bbb607217/)](https://www.linkedin.com/in/vitor-santana-bbb607217/) 
 [![Gmail Badge](https://img.shields.io/badge/-vitorsantana.developer@gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:vitorsantana.developer@gmail)](mailto:vitorsantana.developer@gmail)
