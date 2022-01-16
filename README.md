@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+# Dashboard for managing expenses and earnings.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Manage your monthly expenses and earnings..</p>
 
-## Available Scripts
+<p>
+  <img src="https://img.shields.io/badge/made%20by-Vitor%20Santana-1ECA5F?style=flat-square">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vitorSantanaDev/socialNetworkForDogs?color=1ECA5F&style=flat-square">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/vitorSantanaDev/socialNetworkForDogs?color=1ECA5F&style=flat-square">
+</p>
 
-In the project directory, you can run:
+<div  height="120" align="right" >
+  <h1>💲</h1>
+</div>
 
-### `yarn start`
+## Tópicos 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Sobre a aplicação](#my-wallet-react)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Funcionalidades](#funcionalidades)
 
-### `yarn test`
+[Tecnologias e Ferramentas](#tecnologias-e-ferramentas)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Instalação e uso](#instalação-e-uso)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dashboard for managing expenses and earnings.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+💲Desnvolvido na conclusão de um curso prático de React js. O Dashboard for managing expenses and earnings, tem como objetivo exemplificar uma "Carteira online", onde você consegue ver seu ganhos e gastos mensais. 
 
-### `yarn eject`
+<h3 align="left">🤑 Gif mostrando um pouco da aplicação</h3>
+<p align="center">
+  <img src="src/assets/video/videoOfAplication.gif" alt="página de cadastro">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+💵 A aplição possuí um sistem simples de atenticação de usuário, onde só é possível logar com email e senha que foram colocados como exemplos no código. Logo no Dashboard, você consegue ver seus ganhos, gastos e saldo, além de gráficos animados com informações um pouco mais detalhadas. Navegando pela aplicação você consegue infomações de onde veio suas entradas e gastos. lembrando que as informções contidas nas listas, são apenas exemplos.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Funcionalidades
 
-## Learn More
+- [X] Sistema de login
+- [X] Acesso a estatísticas dos seus gastos e ganhos mensais.
+- [X] Gráficos detalhando as informações da sua carteira.
+- [x] Filtro de mês e ano.
+- [x] Sessão de entradas e saídas.
+- [x] Alternancia de tema entre dark e light.
+- [x] Gráficos criados utilizando a biblioteca Recharts.
+- [X] Páginas dinâmicas com React js.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tecnologias e Ferramentas
+
+As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
+
+- [HTML](https://devdocs.io/html/)
+- [CSS](https://devdocs.io/css/)
+- [JavaScript](https://devdocs.io/javascript/)
+- [React Js](https://devdocs.io/Reactjs/)
+- [styled-components](https://devdocs.io/styled-components/)
+- [Recharts](https://devdocs.io/Recharts/)
+
+<br>
+
+## Instalação e Uso
+
+Para rodar a aplicação, você precisa instalar o [Node](https://nodejs.org/en/)
+
+Siga os passos abaixo:
+
+```bash
+# Abra um terminal e copie este repositório com o comando
+$ git clone https://github.com/vitorSantanaDev/my-wallet-react.git
+# ou use a opção de download.
+
+# Entre na pasta com 
+$ cd my-wallet-react
+
+# Instale as dependências
+$ yarn install
+
+# Rode a aplicação
+$ yarn start
+```
+
+<br>
+
+---
+
+Feito com :yellow_heart: by [Vitor_Santana](https://github.com/vitorSantanaDev)
+
+[![Linkedin Badge](https://img.shields.io/badge/-Vitor%20Santana-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/vitor-santana-bbb607217/)](https://www.linkedin.com/in/vitor-santana-bbb607217/) 
+[![Gmail Badge](https://img.shields.io/badge/-vitorsantana.developer@gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:vitorsantana.developer@gmail)](mailto:vitorsantana.developer@gmail)
