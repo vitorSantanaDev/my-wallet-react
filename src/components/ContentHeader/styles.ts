@@ -5,6 +5,10 @@ export const ContentHeaderWrapper = styled.div `
     display: flex;
     margin-bottom: 24px;
     justify-content: space-between;
+
+    @media only screen and (max-width: 320px) {
+      flex-direction: column;
+    }
 `
 
 export const Title = styled.h3 `
@@ -19,9 +23,19 @@ export const Title = styled.h3 `
     border-radius: 2px;
     background-color: ${({ color }) => color};
   }
+
+  @media only screen and (max-width: 320px) {
+    font-size: 20px;
+  }
 `
 
 export const ControllersWrapper = styled.div `
   display: flex;
-  
+
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-around;
+  }
 `

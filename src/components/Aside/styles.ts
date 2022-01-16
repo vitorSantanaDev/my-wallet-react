@@ -4,6 +4,10 @@ interface AsideWrapperProps {
   isOpen: boolean;
 }
 
+interface ThemeToggleFooterProps {
+  isOpen: boolean;
+}
+
 export const AsideWrapper = styled.aside<AsideWrapperProps>`
   grid-area: AS;
   padding-left: 24px;
@@ -34,6 +38,10 @@ export const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: space-between;
+  }
 `;
 
 export const Logo = styled.img`
@@ -41,7 +49,7 @@ export const Logo = styled.img`
   max-width: 64px;
 
   @media only screen and (max-width: 600px) {
-    max-width: 25px;
+    display: none;
   }
 `;
 
@@ -89,3 +97,38 @@ export const ButtonSignOut = styled.button`
     margin-right: 8px;
   }
 `;
+
+export const ToggleMenu = styled.button`
+  width: 40px;
+  height: 40px;
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 24px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  transition: opacity ease-in-out .3;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.warning};
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+  }
+`
+
+export const ThemeToggleFooter = styled.footer<ThemeToggleFooterProps>`
+  bottom: 30px;
+  display: none;
+  padding: 16px;
+  position: absolute;
+
+  @media only screen and (max-width: 470px) {
+    display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
+  }
+`
