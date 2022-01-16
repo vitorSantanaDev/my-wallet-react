@@ -4,8 +4,9 @@
 
 <p>
   <img src="https://img.shields.io/badge/made%20by-Vitor%20Santana-1ECA5F?style=flat-square">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vitorSantanaDev/socialNetworkForDogs?color=1ECA5F&style=flat-square">
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/vitorSantanaDev/socialNetworkForDogs?color=1ECA5F&style=flat-square">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vitorSantanaDev/
+my-wallet-react?color=1ECA5F&style=flat-square">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/vitorSantanaDev/my-wallet-react?color=1ECA5F&style=flat-square">
 </p>
 
 <div  height="120" align="right" >
@@ -60,9 +61,15 @@ As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 - [HTML](https://devdocs.io/html/)
 - [CSS](https://devdocs.io/css/)
 - [JavaScript](https://devdocs.io/javascript/)
+- [Typescript](https://devdocs.io/typescript/)
 - [React Js](https://devdocs.io/Reactjs/)
 - [styled-components](https://devdocs.io/styled-components/)
-- [Recharts](https://devdocs.io/Recharts/)
+- [Recharts](https://devdocs.io/recharts/)
+- [React Switch](https://devdocs.io/react-switch/)
+- [React Router Dom](https://devdocs.io/react-router-dom/)
+- [React Icons](https://devdocs.io/react-icons/)
+- [React Countup](https://devdocs.io/react-countup/)
+- [UUID](https://devdocs.io/uuid/)
 
 <br>
 
