@@ -4,8 +4,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/made%20by-Vitor%20Santana-1ECA5F?style=flat-square">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vitorSantanaDev/
-my-wallet-react?color=1ECA5F&style=flat-square">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vitorSantanaDev/my-wallet-react?color=1ECA5F&style=flat-square">
   <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/vitorSantanaDev/my-wallet-react?color=1ECA5F&style=flat-square">
 </p>
 
