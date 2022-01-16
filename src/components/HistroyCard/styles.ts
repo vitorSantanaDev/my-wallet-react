@@ -1,7 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 interface TagElementProps {
   color: string;
 }
+
+const animate = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
 
 export const HistoryCardWrapper = styled.li`
   margin: 12px;
@@ -13,6 +27,7 @@ export const HistoryCardWrapper = styled.li`
   align-items: center;
   transition: ease-in-out 0.3s;
   justify-content: space-between;
+  animation: ease-in-out ${animate} .5s;
   background-color: ${({ theme }) => theme.colors.tertiary};
 
   &:hover {
