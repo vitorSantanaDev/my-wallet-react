@@ -1,8 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface WalletBoxWrapperProps {
-  color: string
+  color: string;
 }
+
+const animate = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
 
 export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
   width: 31.2%;
@@ -11,12 +25,13 @@ export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
   position: relative;
   padding: 12px 24px;
   border-radius: 10px;
-  background-color: ${({ color }) => color };
+  animation: ${animate} .5s;
+  background-color: ${({ color }) => color};
   color: ${({ theme }) => theme.colors.white};
 
   > img {
     top: -10px;
-    opacity: .3;
+    opacity: 0.3;
     width: 200px;
     right: -50px;
     height: 110%;
@@ -74,7 +89,7 @@ export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
 
         &::after {
           width: 1px;
-          content: ' ';
+          content: " ";
           display: inline-block;
         }
       }
@@ -84,4 +99,4 @@ export const WalletBoxWrapper = styled.div<WalletBoxWrapperProps>`
       font-size: 14px;
     }
   }
-`
+`;
